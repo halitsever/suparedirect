@@ -24,7 +24,21 @@
 <img src="https://halitsever-api.vercel.app/api/installation"/>
 </p>
 
-Todo: update docs
+```bash
+npm i
+```
+
+```bash
+npm run start
+```
+
+Usage:
+
+```bash
+curl http://localhost:3000/?to=https://halit.org
+```
+
+you can use `to` parameter for redirecting to any website
 
 <p align="center" href="https://github.com/halitsever/repo_name/issues">
 <img src="https://halitsever-api.vercel.app/api/issue"/>
@@ -39,5 +53,5 @@ Todo: update docs
 </p>
 
 <p align="center">
-  ...
+  MIT License - Halit Sever
 </p>
