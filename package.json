@@ -1,0 +1,30 @@
+{
+  "name": "suparedirect",
+  "version": "1.0.0",
+  "description": "🔄 Lightweight anonymous redirect service with referer stripping",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/halitsever/suparedirect.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/halitsever/suparedirect/issues"
+  },
+  "homepage": "https://github.com/halitsever/suparedirect#readme",
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "typescript": "^6.0.2"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
