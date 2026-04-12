@@ -18,6 +18,12 @@
 <img src="https://halitsever-api.vercel.app/api/details"/>
 </p>
 
+<p align="center">
+
+<img src="/assets/screenshot.png"/>
+
+</p>
+
 - 🧑‍💻 [**TODO**](#) - update docs
 
 <p align="center" >
