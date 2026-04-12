@@ -67,6 +67,15 @@ app.get("/api/stats", (_req: express.Request, res: express.Response) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log("Server running on port 3000");
-});
+export { app };
+
+export function resetState() {
+  counter = 0;
+  redirectHistory.length = 0;
+}
+
+if (process.env.NODE_ENV !== "test") {
+  app.listen(3000, () => {
+    console.log("Server running on port 3000");
+  });
+}
