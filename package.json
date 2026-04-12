@@ -6,8 +6,12 @@
   "type": "module",
   "scripts": {
     "build": "tsc",
-    "start": "node dist/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "concurrently --names \"server,dashboard\" -c \"blue,green\" \"node dist/index.js\" \"npm run dashboard:dev\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dashboard:install": "cd dashboard && npm install",
+    "dashboard:dev": "cd dashboard && npm run dev",
+    "dashboard:build": "cd dashboard && npm run build",
+    "dev": "npm run build && concurrently --names \"ts,server,dashboard\" -c \"cyan,blue,green\" \"tsc -w\" \"node --watch dist/index.js\" \"npm run dashboard:dev\""
   },
   "repository": {
     "type": "git",
@@ -22,6 +26,7 @@
   "homepage": "https://github.com/halitsever/suparedirect#readme",
   "devDependencies": {
     "@types/express": "^5.0.6",
+    "concurrently": "^9.2.1",
     "typescript": "^6.0.2"
   },
   "dependencies": {
