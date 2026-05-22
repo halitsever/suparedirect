@@ -30,6 +30,19 @@
 <img src="https://halitsever-api.vercel.app/api/installation"/>
 </p>
 
+Running via docker:
+
+```bash
+# expose api port only
+docker run -p 3000:3000  halitsever/suparedirect:latest
+
+# expose dashboard & api ports
+docker run -p 3000:3000 -p 5173:5173  halitsever/suparedirect:latest
+
+```
+
+For development:
+
 ```bash
 npm i
 ```
