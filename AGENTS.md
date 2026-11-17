@@ -19,7 +19,6 @@ CI (`.github/workflows/ci.yml`, Node LTS) runs these in order:
 - The redirect page writes the target URL into an inline script through `JSON.stringify(encodeURI(...))`. Keep that escaping when touching the redirect handler.
 - Redirect stats live in memory (last 500 entries) and reset on restart.
 - The Docker image runs `npm run start`, which serves the dashboard through the Vite dev server on 5173, not a static build. The Dockerfile uses `npm install` in `dashboard/` so npm picks the Alpine (musl) rollup binary.
-- The root holds compiled leftovers of `vitest.config.ts` (`vitest.config.js`, `.d.ts`, `.map`). `tsconfig.json` compiles only `src/`, so edit the `.ts` file.
 - Two lockfiles, `package-lock.json` and `dashboard/package-lock.json`, each bumped weekly by Dependabot. Commit only the one you changed.
 
 ## Conventions
