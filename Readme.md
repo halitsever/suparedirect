@@ -62,7 +62,7 @@ curl http://localhost:3000/?to=https://halit.org
 
 you can use `to` parameter for redirecting to any website
 
-<p align="center" href="https://github.com/halitsever/repo_name/issues">
+<p align="center" href="https://github.com/halitsever/suparedirect/issues">
 <img src="https://halitsever-api.vercel.app/api/issue"/>
 </p>
 
