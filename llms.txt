@@ -1,12 +1,13 @@
 # Suparedirect
 
-> Self-hosted anonymous URL redirect service (dereferer) built with Node.js, Express and TypeScript. It strips the Referer header and ships with a React stats dashboard and a Docker image.
+> Self-hosted anonymous URL redirect service (dereferer) built with Node.js, Express and TypeScript. It turns any URL into an anonymous link: the redirect page is served with `Referrer-Policy: no-referrer` and a matching meta tag, so the target site receives no Referer header. It ships with a React stats dashboard and a Docker image.
 
 Run it with `docker run -p 3000:3000 -p 5173:5173 halitsever/suparedirect:latest`, then send visitors to `http://localhost:3000/?to=<url>`. The `to` parameter is required; a bare domain gets `https://` added. Stats are served at `GET /api/stats` and kept in memory only.
 
 ## Docs
 
 - [README](https://github.com/halitsever/suparedirect/blob/main/Readme.md): features, Docker and development setup, usage
+- [How it hides the Referer header](https://github.com/halitsever/suparedirect/blob/main/Readme.md#how-it-hides-the-referer-header): the redirect page, its limits, and when `Referrer-Policy` or `rel="noreferrer"` is enough without a dereferer
 - [Server](https://github.com/halitsever/suparedirect/blob/main/src/index.ts): redirect handler and stats API
 - [Dashboard](https://github.com/halitsever/suparedirect/blob/main/dashboard/src/App.tsx): React stats dashboard
 - [Dockerfile](https://github.com/halitsever/suparedirect/blob/main/Dockerfile): container build
