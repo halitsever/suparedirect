@@ -4,7 +4,7 @@
 <img src="https://halitsever-api.vercel.app/api/repo-title?title=Suparedirect">
 
 <p align="center">
-🔄 Self-hosted dereferer that hides the referrer: it turns any URL into an anonymous link that opens without the Referer header. Built on Node.js and Express, with a Docker image and a React stats dashboard<br>
+Self-hosted dereferer that hides the referrer: it turns any URL into an anonymous link that opens without the Referer header. Built on Node.js and Express, with a Docker image and a React stats dashboard<br>
 <br/>
 <br/>
 <img src="https://img.shields.io/github/sponsors/halitsever" alt="GitHub Sponsors"/>
