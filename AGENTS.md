@@ -13,7 +13,7 @@ CI (`.github/workflows/ci.yml`, Node LTS) runs these in order:
 
 ## Docs site
 
-The project website is a VitePress site in `docs/`, published to `https://halitsever.github.io/suparedirect/` by `.github/workflows/docs.yml`. It has its own `package.json`, lockfile and `tsconfig.json`, and is kept out of the Docker image by `.dockerignore`.
+The project website is a VitePress site in `docs/`, published to `https://projects.halit.org/suparedirect/` by `.github/workflows/docs.yml`. It has its own `package.json`, lockfile and `tsconfig.json`, and is kept out of the Docker image by `.dockerignore`.
 
 - Build it with `cd docs && npm ci && npm run build`. Use `npm run dev` for a local preview.
 - Pages in `docs/guide/` describe what `src/index.ts` and the dashboard do. Update them when behaviour changes.

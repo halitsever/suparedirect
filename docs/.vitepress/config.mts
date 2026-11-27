@@ -1,6 +1,6 @@
 import { defineConfig } from 'vitepress'
 
-const site = 'https://halitsever.github.io/suparedirect/'
+const site = 'https://projects.halit.org/suparedirect/'
 const homeTitle = 'Self-hosted dereferer: anonymous redirect links'
 const description = 'Suparedirect is a self-hosted dereferer. It turns any URL into an anonymous redirect link that opens without the Referer header. Node.js, Express, Docker.'
 
@@ -40,7 +40,7 @@ export default defineConfig({
   sitemap: { hostname: site },
 
   head: [
-    /** Cloudflare Web Analytics, one token for every page on halitsever.github.io. */
+    /** Cloudflare Web Analytics, one token for every page on projects.halit.org. */
     ['script', { defer: '', src: 'https://static.cloudflareinsights.com/beacon.min.js', 'data-cf-beacon': '{"token": "dd7e54d3f48841c187d72d9dbb92a6b6"}' }],
     ['link', { rel: 'icon', href: '/suparedirect/favicon.ico', sizes: '32x32' }],
     ['link', { rel: 'icon', href: '/suparedirect/favicon.svg', type: 'image/svg+xml' }],

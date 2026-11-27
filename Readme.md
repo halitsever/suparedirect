@@ -10,7 +10,7 @@ Self-hosted dereferer that hides the referrer: it turns any URL into an anonymou
 <img src="https://img.shields.io/github/sponsors/halitsever" alt="GitHub Sponsors"/>
 </p>
 <p align="center">
-<a align="center" href="https://halitsever.github.io/suparedirect/">Documentation</a>
+<a align="center" href="https://projects.halit.org/suparedirect/">Documentation</a>
   </p>
 </p>
 
