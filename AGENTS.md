@@ -11,6 +11,14 @@ CI (`.github/workflows/ci.yml`, Node LTS) runs these in order:
 
 `npm start` runs `node dist/index.js`, so build before starting.
 
+## Docs site
+
+The project website is a VitePress site in `docs/`, published to `https://halitsever.github.io/suparedirect/` by `.github/workflows/docs.yml`. It has its own `package.json`, lockfile and `tsconfig.json`, and is kept out of the Docker image by `.dockerignore`.
+
+- Build it with `cd docs && npm ci && npm run build`. Use `npm run dev` for a local preview.
+- Pages in `docs/guide/` describe what `src/index.ts` and the dashboard do. Update them when behaviour changes.
+- A push that only touches `docs/**` does not run the Docker pipeline in `main.yml`.
+
 ## Gotchas
 
 - Every push to `main` runs `.github/workflows/main.yml`, which builds the Docker image and pushes `halitsever/suparedirect:latest` to Docker Hub. Merging a PR ships it.
@@ -19,7 +27,7 @@ CI (`.github/workflows/ci.yml`, Node LTS) runs these in order:
 - The redirect page writes the target URL into an inline script through `JSON.stringify(encodeURI(...))`. Keep that escaping when touching the redirect handler.
 - Redirect stats live in memory (last 500 entries) and reset on restart.
 - The Docker image runs `npm run start`, which serves the dashboard through the Vite dev server on 5173, not a static build. The Dockerfile uses `npm install` in `dashboard/` so npm picks the Alpine (musl) rollup binary.
-- Two lockfiles, `package-lock.json` and `dashboard/package-lock.json`, each bumped weekly by Dependabot. Commit only the one you changed.
+- Three lockfiles, `package-lock.json`, `dashboard/package-lock.json` and `docs/package-lock.json`, each bumped by Dependabot. Commit only the one you changed.
 
 ## Conventions
 

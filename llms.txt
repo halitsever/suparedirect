@@ -6,6 +6,7 @@ Run it with `docker run -p 3000:3000 -p 5173:5173 halitsever/suparedirect:latest
 
 ## Docs
 
+- [Project website](https://halitsever.github.io/suparedirect/): getting started, how the redirect works, self-hosting notes and guides to the Referer header
 - [README](https://github.com/halitsever/suparedirect/blob/main/Readme.md): features, Docker and development setup, usage
 - [How it hides the Referer header](https://github.com/halitsever/suparedirect/blob/main/Readme.md#how-it-hides-the-referer-header): the redirect page, its limits, and when `Referrer-Policy` or `rel="noreferrer"` is enough without a dereferer
 - [Server](https://github.com/halitsever/suparedirect/blob/main/src/index.ts): redirect handler and stats API
