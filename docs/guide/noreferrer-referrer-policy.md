@@ -1,6 +1,6 @@
 ---
 title: 'noreferrer, Referrer-Policy or a dereferer'
-description: When rel="noreferrer" or a Referrer-Policy header is enough to make a no referrer link, how the policy values differ, and when a dereferer still helps.
+description: When the noreferrer link attribute or a Referrer-Policy header is enough to make a no referrer link, how the policy values differ, and when a dereferer helps.
 ---
 
 # noreferrer, Referrer-Policy or a dereferer
