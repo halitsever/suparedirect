@@ -1,0 +1,145 @@
+/* Tokens come from dashboard/src/App.module.css so the site and the dashboard match. */
+:root {
+  --sr-violet: #7c7af9;
+  --sr-violet-hi: #a3a1fb;
+  --sr-bg: #07070b;
+  --sr-bg-2: #0d0d14;
+  --sr-line: rgba(255, 255, 255, 0.06);
+  --sr-line-2: rgba(255, 255, 255, 0.1);
+  --sr-ink: #e8e8ee;
+  --sr-ink-2: rgba(232, 232, 238, 0.7);
+  --sr-ink-3: rgba(232, 232, 238, 0.5);
+
+  --vp-font-family-base: 'Inter Variable', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --vp-font-family-mono: 'JetBrains Mono Variable', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+:root,
+.dark {
+  --vp-c-bg: var(--sr-bg);
+  --vp-c-bg-alt: var(--sr-bg);
+  --vp-c-bg-soft: var(--sr-bg-2);
+  --vp-c-bg-elv: #12121b;
+
+  --vp-c-divider: var(--sr-line);
+  --vp-c-border: var(--sr-line-2);
+  --vp-c-gutter: var(--sr-line);
+
+  --vp-c-text-1: var(--sr-ink);
+  --vp-c-text-2: var(--sr-ink-2);
+  --vp-c-text-3: var(--sr-ink-3);
+
+  --vp-c-brand-1: var(--sr-violet-hi);
+  --vp-c-brand-2: var(--sr-violet);
+  --vp-c-brand-3: var(--sr-violet);
+  --vp-c-brand-soft: rgba(124, 122, 249, 0.14);
+
+  --vp-code-color: #c9c8ff;
+  --vp-code-bg: rgba(124, 122, 249, 0.12);
+  --vp-code-block-bg: var(--sr-bg-2);
+  --vp-code-block-divider-color: var(--sr-line);
+
+  --vp-nav-bg-color: var(--sr-bg);
+  --vp-sidebar-bg-color: var(--sr-bg);
+  --vp-local-search-bg: var(--sr-bg-2);
+  --vp-c-tip-1: var(--sr-violet-hi);
+  --vp-c-tip-soft: rgba(124, 122, 249, 0.1);
+  --vp-custom-block-tip-code-bg: rgba(124, 122, 249, 0.16);
+}
+
+body {
+  font-feature-settings: 'ss01', 'cv11';
+}
+
+/* Code is shown character for character, so arrows and slashes stay unjoined. */
+code,
+pre,
+kbd,
+h1,
+h2 {
+  font-variant-ligatures: none;
+  font-feature-settings: 'zero', 'liga' 0, 'calt' 0;
+}
+
+/* The wordmark is set in the mono face, like the request text on the home page. */
+.VPNavBarTitle .title {
+  font-family: var(--vp-font-family-mono);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+}
+.VPNavBarTitle .logo {
+  height: 22px;
+}
+
+.VPNavBar,
+.VPNavBar:not(.home.top) .content-body,
+.VPNavBar.has-sidebar .content-body {
+  background-color: var(--sr-bg) !important;
+}
+.VPNavBar .divider-line {
+  background-color: var(--sr-line) !important;
+}
+
+/* Docs headings share the display face with the home page. */
+.vp-doc h1,
+.vp-doc h2 {
+  font-family: var(--vp-font-family-mono);
+  letter-spacing: -0.03em;
+  word-spacing: -0.12em;
+}
+.vp-doc h1 {
+  font-size: clamp(1.7rem, 3.4vw, 2.3rem);
+  line-height: 1.15;
+  font-weight: 600;
+}
+.vp-doc h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  border-top-color: var(--sr-line);
+}
+.vp-doc h3 {
+  font-weight: 600;
+}
+.vp-doc p,
+.vp-doc li {
+  line-height: 1.7;
+}
+.vp-doc a {
+  text-underline-offset: 3px;
+}
+.vp-doc div[class*='language-'] {
+  border: 1px solid var(--sr-line);
+}
+.vp-doc table {
+  font-size: 0.92rem;
+}
+.vp-doc th {
+  background: var(--sr-bg-2);
+  text-align: left;
+}
+.vp-doc tr:nth-child(2n) {
+  background: transparent;
+}
+.vp-doc img {
+  border: 1px solid var(--sr-line-2);
+  border-radius: 12px;
+}
+
+/* A header that is absent: used inline in the guides. */
+.vp-doc del {
+  color: var(--sr-ink-3);
+  text-decoration-color: var(--sr-violet);
+  text-decoration-thickness: 2px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--sr-violet-hi);
+  outline-offset: 2px;
+}
+
+/* The landing page owns the full width and its own footer. */
+.VPContent.is-home,
+.VPPage {
+  padding: 0;
+}
