@@ -81,4 +81,5 @@ Proxies may merge the double slash after https:, and the target's own query stri
 - [Reading HTTP_REFERER in PHP and nginx](/blog/http-referer-php-nginx)
 - [How URL redirects work: 301, 302, meta refresh and JavaScript](/blog/how-url-redirects-work)
 - [How to hide the referrer URL when linking out](/blog/hide-referrer-url)
+- [Open redirects: why they are risky and how to lock one down](/blog/open-redirect)
 - [All posts](/blog/)

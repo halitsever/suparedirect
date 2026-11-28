@@ -110,4 +110,6 @@ A plain 301 or 302 does not: the destination gets the original page as the refer
 - [Referrer-Policy header: best practices and every value](/blog/referrer-policy-best-practices)
 - [Redirect services with the target URL in the path](/blog/redirect-service-url-in-path)
 - [How to hide the referrer URL when linking out](/blog/hide-referrer-url)
+- [Redirecting with JavaScript, and what the Back button does after](/blog/javascript-redirect)
+- [Meta refresh and the Referer header: what a second refresh changes](/blog/meta-refresh-referrer)
 - [All posts](/blog/)

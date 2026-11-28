@@ -80,4 +80,5 @@ No. It only removes the Referer header from the request. Crawl hints are nofollo
 - [strict-origin-when-cross-origin, explained](/blog/strict-origin-when-cross-origin)
 - [Referrer-Policy header: best practices and every value](/blog/referrer-policy-best-practices)
 - [How to hide the referrer URL when linking out](/blog/hide-referrer-url)
+- [What rel nofollow tells search engines, and what it does not change](/blog/rel-nofollow)
 - [All posts](/blog/)

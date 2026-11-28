@@ -146,6 +146,12 @@ export default defineConfig({
             { text: 'Target URL in the path', link: '/blog/redirect-service-url-in-path' },
             { text: 'Referer in an HTTP request', link: '/blog/referer-in-http-request' },
             { text: 'Hide the referrer URL', link: '/blog/hide-referrer-url' },
+            { text: 'Double meta refresh', link: '/blog/meta-refresh-referrer' },
+            { text: 'JavaScript redirect', link: '/blog/javascript-redirect' },
+            { text: 'Open redirect', link: '/blog/open-redirect' },
+            { text: 'Referer vs referrer', link: '/blog/referer-vs-referrer' },
+            { text: 'rel nofollow', link: '/blog/rel-nofollow' },
+            { text: 'UTM parameters', link: '/blog/utm-parameters' },
           ],
         },
         {
