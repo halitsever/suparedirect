@@ -1,11 +1,11 @@
 ---
-title: 'noreferrer, Referrer-Policy or a dereferer'
-description: When the noreferrer link attribute or a Referrer-Policy header is enough to make a no referrer link, how the policy values differ, and when a dereferer helps.
+title: 'Do you need a dereferer?'
+description: Before you set up a dereferer, check whether a link attribute or a Referrer-Policy header already hides the referrer, and when a dereferer still helps.
 ---
 
-# noreferrer, Referrer-Policy or a dereferer
+# Do you need a dereferer?
 
-There are three ways to stop a link from telling the destination where the visitor came from. Two are built into HTML and HTTP and cost nothing. The third is a redirect service such as Suparedirect. For most links on your own site, the built-in ones are the right answer.
+There are three ways to stop a link from telling the destination where the visitor came from. Two are built into HTML and HTTP and cost nothing. The third is a dereferer, a redirect service such as Suparedirect. For most links on your own site, the built-in ones are the right answer, and this page helps you tell which case you are in.
 
 ## The short version
 
@@ -15,23 +15,19 @@ There are three ways to stop a link from telling the destination where the visit
 | The page or the server | `Referrer-Policy` | Every request from the page |
 | Only the URL you post | A dereferer link | That one link |
 
-## rel="noreferrer"
+## On one link: the rel attribute
 
-`noreferrer` is a value of the `rel` attribute on `<a>`, `<area>` and `<form>` elements:
+If you can edit the link's HTML, one attribute removes the referrer for that link:
 
 ```html
 <a href="https://shop.example/pricing" rel="noreferrer">Pricing</a>
 ```
 
-The browser follows the link without a `Referer` header, and `document.referrer` on the destination is empty. It also implies `noopener`: a page opened in a new tab this way cannot reach back to yours through `window.opener`.
+`rel="noopener"` alone does not do this, and `rel="nofollow"` is unrelated. [rel="noopener noreferrer": what each part does](/blog/noopener-noreferrer) explains the attribute in full.
 
-A common mix-up: `rel="noopener"` alone does not remove the referrer. It only cuts the `window.opener` connection. If you want both effects, `noreferrer` gives you both.
+## On a whole page: a referrer policy
 
-`rel="nofollow"` is unrelated. It is a hint for search engines and changes nothing in the request.
-
-## The Referrer-Policy header
-
-`Referrer-Policy` sets the rule for a whole document. Send it as a response header:
+If you control the page or the server, one setting covers every link, image and script on it. Send it as a response header:
 
 ```http
 Referrer-Policy: no-referrer
@@ -43,20 +39,7 @@ or put it in the page's `<head>`:
 <meta name="referrer" content="no-referrer">
 ```
 
-It applies to link clicks and also to images, scripts and other requests the page makes. The values, from least to most revealing:
-
-| Value | What other sites receive |
-| --- | --- |
-| `no-referrer` | Nothing, for any request |
-| `same-origin` | Nothing. Requests to your own origin get the full URL |
-| `strict-origin` | Your origin only, and nothing on HTTPS to HTTP |
-| `strict-origin-when-cross-origin` | Your origin only, and nothing on HTTPS to HTTP. Same-origin requests get the full URL |
-| `origin` | Your origin only, even on HTTPS to HTTP |
-| `origin-when-cross-origin` | Your origin only. Same-origin requests get the full URL |
-| `no-referrer-when-downgrade` | The full URL, except on HTTPS to HTTP |
-| `unsafe-url` | The full URL, always |
-
-`strict-origin-when-cross-origin` is what current browsers use when a page sets nothing. So without any work on your side, other sites already see only your origin and not the page path. Use `no-referrer` or `same-origin` when even the origin should stay private.
+Browsers already default to [strict-origin-when-cross-origin](/blog/strict-origin-when-cross-origin), so other sites see only your origin, not the page path. Use `no-referrer` or `same-origin` when even the origin should stay private. [Referrer-Policy best practices](/blog/referrer-policy-best-practices) lists every value and the server settings for nginx, Apache, IIS and Express.
 
 ### A policy for one element
 

@@ -76,7 +76,7 @@ Add `rel="noreferrer"` to the link, or set a policy for the whole page:
 <meta name="referrer" content="no-referrer">
 ```
 
-The policy can also be sent as a response header, `Referrer-Policy: no-referrer`. The guide to [noreferrer and Referrer-Policy](./noreferrer-referrer-policy) covers the options and their differences.
+The policy can also be sent as a response header, `Referrer-Policy: no-referrer`. [Do you need a dereferer?](./noreferrer-referrer-policy) compares it with the link attribute and a dereferer, and [Referrer-Policy best practices](/blog/referrer-policy-best-practices) lists every value.
 
 ### You only control the link itself
 

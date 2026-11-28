@@ -27,6 +27,50 @@ const jsonLd = {
   ],
 }
 
+const person = { '@type': 'Person', name: 'Halit Sever', url: 'https://halit.org' }
+
+/** BlogPosting and breadcrumbs for posts, FAQPage wherever the page shows an FAQ. */
+function pageJsonLd(fm: Record<string, any>, url: string, title: string, pageDescription: string) {
+  const graph: object[] = []
+  if (fm.date) {
+    graph.push(
+      {
+        '@type': 'BlogPosting',
+        headline: fm.headline ?? title,
+        description: pageDescription,
+        url,
+        mainEntityOfPage: url,
+        datePublished: fm.date,
+        dateModified: fm.date,
+        inLanguage: 'en',
+        image: `${site}og.png`,
+        keywords: fm.keyword,
+        author: person,
+        publisher: person,
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Suparedirect', item: site },
+          { '@type': 'ListItem', position: 2, name: 'Blog', item: `${site}blog/` },
+          { '@type': 'ListItem', position: 3, name: fm.headline ?? title, item: url },
+        ],
+      },
+    )
+  }
+  if (fm.faq?.length) {
+    graph.push({
+      '@type': 'FAQPage',
+      mainEntity: fm.faq.map((f: { q: string; a: string }) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a.replace(/<[^>]+>|`|\*\*/g, '') },
+      })),
+    })
+  }
+  return { '@context': 'https://schema.org', '@graph': graph }
+}
+
 export default defineConfig({
   /** keeps the page hash map out of every page's HTML, which Semrush reads as a low text-to-HTML ratio */
   metaChunk: true,
@@ -60,13 +104,19 @@ export default defineConfig({
     const isHome = pageData.relativePath === 'index.md'
     const title = pageData.frontmatter.title ?? pageData.title
     const url = site + pageData.relativePath.replace(/(^|\/)index\.md$/, '$1').replace(/\.md$/, '')
-    pageData.frontmatter.head ??= []
-    pageData.frontmatter.head.push(
+    const fm = pageData.frontmatter
+    const pageDescription = fm.description ?? description
+    // Pages with titleTemplate: false already carry their full title.
+    const fullTitle = isHome ? homeTitle : fm.titleTemplate === false ? title : `${title} | Suparedirect`
+    fm.head ??= []
+    fm.head.push(
       ['link', { rel: 'canonical', href: url }],
       ['meta', { property: 'og:url', content: url }],
-      ['meta', { property: 'og:title', content: isHome ? homeTitle : `${title} | Suparedirect` }],
-      ['meta', { property: 'og:description', content: pageData.frontmatter.description ?? description }],
+      ['meta', { property: 'og:title', content: fullTitle }],
+      ['meta', { property: 'og:description', content: pageDescription }],
     )
+    if (fm.date) fm.head.push(['meta', { property: 'article:published_time', content: fm.date }])
+    if (fm.date || fm.faq) fm.head.push(['script', { type: 'application/ld+json' }, JSON.stringify(pageJsonLd(fm, url, title, pageDescription))])
   },
 
   markdown: {
@@ -79,8 +129,31 @@ export default defineConfig({
       { text: 'How it works', link: '/guide/how-it-works' },
       { text: 'Get started', link: '/guide/getting-started' },
       { text: 'Referer header', link: '/guide/referer-header' },
+      { text: 'Link generator', link: '/link-generator/' },
+      { text: 'Blog', link: '/blog/', activeMatch: '/blog/' },
     ],
-    sidebar: [
+    sidebar: {
+      '/blog/': [
+        {
+          text: 'Blog',
+          items: [
+            { text: 'All posts', link: '/blog/' },
+            { text: 'strict-origin-when-cross-origin', link: '/blog/strict-origin-when-cross-origin' },
+            { text: 'noopener noreferrer', link: '/blog/noopener-noreferrer' },
+            { text: 'Referrer-Policy best practices', link: '/blog/referrer-policy-best-practices' },
+            { text: 'HTTP_REFERER in PHP and nginx', link: '/blog/http-referer-php-nginx' },
+            { text: 'How URL redirects work', link: '/blog/how-url-redirects-work' },
+            { text: 'Target URL in the path', link: '/blog/redirect-service-url-in-path' },
+            { text: 'Referer in an HTTP request', link: '/blog/referer-in-http-request' },
+            { text: 'Hide the referrer URL', link: '/blog/hide-referrer-url' },
+          ],
+        },
+        {
+          text: 'Tools',
+          items: [{ text: 'Link generator', link: '/link-generator/' }],
+        },
+      ],
+      '/guide/': [
       {
         text: 'Run it',
         items: [
@@ -94,11 +167,19 @@ export default defineConfig({
         text: 'Background',
         items: [
           { text: 'The Referer header', link: '/guide/referer-header' },
-          { text: 'noreferrer and Referrer-Policy', link: '/guide/noreferrer-referrer-policy' },
+          { text: 'Do you need a dereferer?', link: '/guide/noreferrer-referrer-policy' },
           { text: 'Dereferer services compared', link: '/guide/dereferer-alternatives' },
         ],
       },
+      {
+        text: 'More',
+        items: [
+          { text: 'Link generator', link: '/link-generator/' },
+          { text: 'Blog', link: '/blog/' },
+        ],
+      },
     ],
+    },
     socialLinks: [{ icon: 'github', link: repo }],
     outline: { level: [2, 3] },
     editLink: {

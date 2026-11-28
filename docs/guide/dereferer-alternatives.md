@@ -67,6 +67,6 @@ Whether you pick a hosted service or run one, the same checks apply.
 
 ## Do you need one at all?
 
-Often not. If the links are on pages you control, `rel="noreferrer"` or a `Referrer-Policy` header removes the referrer with no redirect and no third server. A dereferer is for the places where you can only post a URL. The guide to [noreferrer and Referrer-Policy](./noreferrer-referrer-policy) goes through the cases.
+Often not. If the links are on pages you control, `rel="noreferrer"` or a `Referrer-Policy` header removes the referrer with no redirect and no third server. A dereferer is for the places where you can only post a URL. [Do you need a dereferer?](./noreferrer-referrer-policy) goes through the cases.
 
 If you decide to run your own, [Getting started](./getting-started) has the commands.
