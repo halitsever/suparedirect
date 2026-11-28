@@ -2,13 +2,13 @@
 title: "strict-origin-when-cross-origin Explained"
 titleTemplate: false
 description: "What the strict-origin-when-cross-origin referrer policy sends for each kind of request, why DevTools shows it next to failed requests, and how to change it."
-headline: "strict-origin-when-cross-origin, explained"
+headline: "What strict-origin-when-cross-origin sends, and when"
 date: "2026-11-28"
 keyword: "referrer policy strict-origin-when-cross-origin"
 faq: [{"q": "Is strict-origin-when-cross-origin an error?", "a": "No. It is the browser's default referrer policy. DevTools shows it in the General section of every request, and it never blocks a request or causes a 403."}, {"q": "What does strict-origin-when-cross-origin send?", "a": "The full URL to the same origin, only the origin (such as https://example.com/) to other HTTPS sites, and nothing from an HTTPS page to an HTTP address."}]
 ---
 
-# strict-origin-when-cross-origin, explained
+# What strict-origin-when-cross-origin sends, and when
 
 <p class="post-meta">By <a href="https://halit.org">Halit Sever</a> · <time datetime="2026-11-28">28 November 2026</time></p>
 

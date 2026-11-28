@@ -3,7 +3,7 @@ title: Self-hosting notes
 description: What to know before you put Suparedirect on a public address. The fixed port 3000, in-memory stats capped at 500, the open stats endpoint and TLS.
 ---
 
-# Self-hosting notes
+# Before you self-host Suparedirect
 
 Suparedirect is a small program, and a few of its choices matter once it faces the internet. Everything here follows from the code and the Dockerfile in the repository.
 

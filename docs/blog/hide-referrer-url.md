@@ -2,13 +2,13 @@
 title: "How to Hide the Referrer URL When Linking Out"
 titleTemplate: false
 description: "Four ways to hide the referrer URL from the sites you link to: rel=noreferrer, a Referrer-Policy header, a meta tag, or a self-hosted dereferer link."
-headline: "How to hide the referrer URL when linking out"
+headline: "Hiding the referrer URL on outgoing links"
 date: "2026-11-28"
 keyword: "hide referrer url"
 faq: [{"q": "How do I hide the referrer on a link?", "a": "Add rel=\"noreferrer\" to the link, set Referrer-Policy: no-referrer on the page, or, where you can only paste a URL, send it through a dereferer such as Suparedirect."}, {"q": "Does hiding the referrer hide my IP address?", "a": "No. The destination still sees the IP address and user agent. Only the page you came from is hidden."}]
 ---
 
-# How to hide the referrer URL when linking out
+# Hiding the referrer URL on outgoing links
 
 <p class="post-meta">By <a href="https://halit.org">Halit Sever</a> · <time datetime="2026-11-28">28 November 2026</time></p>
 

@@ -2,13 +2,13 @@
 title: "Redirect Services With the Target URL in the Path"
 titleTemplate: false
 description: "Path-style redirect URLs put the target after a slash instead of in ?to=. How they differ, where they break, and how to add a path route to Suparedirect."
-headline: "Redirect services with the target URL in the path"
+headline: "Putting the target URL in a redirect service's path"
 date: "2026-11-28"
 keyword: "free url redirect service target in path no query parameter"
 faq: [{"q": "Does Suparedirect support the target URL in the path?", "a": "Not out of the box. It takes the target in the to query parameter. Self-hosters can add a small Express middleware that forwards path-style requests to the query form."}, {"q": "Why does a path-style redirect lose part of the URL?", "a": "Proxies may merge the double slash after https:, and the target's own query string is parsed as the service's query unless the code reads the raw request URL."}]
 ---
 
-# Redirect services with the target URL in the path
+# Putting the target URL in a redirect service's path
 
 <p class="post-meta">By <a href="https://halit.org">Halit Sever</a> · <time datetime="2026-11-28">28 November 2026</time></p>
 

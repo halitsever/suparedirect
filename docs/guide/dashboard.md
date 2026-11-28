@@ -3,7 +3,7 @@ title: Stats dashboard
 description: The Suparedirect stats dashboard on port 5173 shows total redirects and the latest 500 redirects from memory. What each number means and where it comes from.
 ---
 
-# Stats dashboard
+# The redirect stats dashboard
 
 Suparedirect comes with a small React dashboard. It shows how many redirects the server has handled and lists the most recent ones. It is a view over one JSON endpoint, so anything it shows you can also read with curl.
 
