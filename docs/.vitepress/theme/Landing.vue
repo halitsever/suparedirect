@@ -21,7 +21,7 @@ const guides = [
   <div class="sr">
     <section class="hero">
       <div class="wrap">
-        <h1>Self-hosted dereferer: anonymous redirect links</h1>
+        <h1>Anonymous redirect links from a dereferer you host yourself</h1>
         <p class="lede">
           Suparedirect is a small Express server you run yourself. Link through it and the site on
           the other end gets the visitor without the <code>Referer</code> header, so it cannot tell

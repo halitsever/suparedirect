@@ -3,7 +3,7 @@ title: How an anonymous redirect works
 description: How Suparedirect strips the Referer header with a no-referrer redirect page, what the target site still sees, and the limits of an anonymous redirect.
 ---
 
-# How an anonymous redirect works
+# Inside an anonymous redirect, step by step
 
 Suparedirect does not rewrite or filter requests. It serves one small page, and that page tells the browser to leave the `Referer` header off the next request. This page goes through the mechanism using the code in `src/index.ts`.
 

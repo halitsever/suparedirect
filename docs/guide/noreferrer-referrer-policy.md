@@ -3,7 +3,7 @@ title: 'Do you need a dereferer?'
 description: Before you set up a dereferer, check whether a link attribute or a Referrer-Policy header already hides the referrer, and when a dereferer still helps.
 ---
 
-# Do you need a dereferer?
+# noreferrer, Referrer-Policy or a dereferer?
 
 There are three ways to stop a link from telling the destination where the visitor came from. Two are built into HTML and HTTP and cost nothing. The third is a dereferer, a redirect service such as Suparedirect. For most links on your own site, the built-in ones are the right answer, and this page helps you tell which case you are in.
 
