@@ -89,4 +89,6 @@ No. The destination still sees the IP address and user agent. Only the page you 
 - [rel="noopener noreferrer": what each part does](/blog/noopener-noreferrer)
 - [Referrer-Policy header: best practices and every value](/blog/referrer-policy-best-practices)
 - [The Referer in an HTTP request: how to read and test it](/blog/referer-in-http-request)
+- [UTM parameters explained, and how they survive a hidden referrer](/blog/utm-parameters)
+- [Meta refresh and the Referer header: what a second refresh changes](/blog/meta-refresh-referrer)
 - [All posts](/blog/)

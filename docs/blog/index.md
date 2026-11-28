@@ -1,7 +1,7 @@
 ---
 title: "Referrer and Redirect Guides | Suparedirect Blog"
 titleTemplate: false
-description: "Guides to the Referer header and Referrer-Policy: strict-origin-when-cross-origin, noopener noreferrer, HTTP_REFERER, URL redirects and hiding referrers."
+description: "Guides to the Referer header and Referrer-Policy, noreferrer and nofollow, JavaScript and meta refresh redirects, open redirects and UTM tracking."
 ---
 
 # Suparedirect blog
@@ -39,3 +39,27 @@ Where the Referer header sits in an HTTP request, how to see it in DevTools, sen
 ## [How to hide the referrer URL when linking out](/blog/hide-referrer-url)
 
 Four ways to hide the referrer URL from the sites you link to: rel=noreferrer, a Referrer-Policy header, a meta tag, or a self-hosted dereferer link.
+
+## [Meta refresh and the Referer header: what a second refresh changes](/blog/meta-refresh-referrer)
+
+We tested single and double meta refresh redirects in Chrome: which Referer each hop sends, why the refresh page becomes the referrer, and what really hides it.
+
+## [Redirecting with JavaScript, and what the Back button does after](/blog/javascript-redirect)
+
+Redirect with JavaScript using location.href, assign or replace, tested in Chrome: which ones keep the page in history and why redirects during load differ.
+
+## [Open redirects: why they are risky and how to lock one down](/blog/open-redirect)
+
+What an open redirect vulnerability is, how phishing uses it, OWASP's fixes with a tested Node.js allowlist, and why a dereferer is an open redirect by design.
+
+## [Referer or referrer: which spelling goes where](/blog/referer-vs-referrer)
+
+Why the HTTP header is spelled Referer while Referrer-Policy, document.referrer and rel=noreferrer use two r's, and which spelling each server expects.
+
+## [What rel nofollow tells search engines, and what it does not change](/blog/rel-nofollow)
+
+What rel=nofollow does for Google, when to use sponsored or ugc instead, and how it differs from noreferrer and noopener, which change the browser instead.
+
+## [UTM parameters explained, and how they survive a hidden referrer](/blog/utm-parameters)
+
+What UTM parameters are, the five Google Analytics reads, how they keep attribution when the Referer is hidden, and how to pass them through a redirect intact.

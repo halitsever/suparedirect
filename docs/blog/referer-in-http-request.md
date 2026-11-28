@@ -92,4 +92,5 @@ With curl, use -e followed by the URL, or -H 'Referer: ...'. Servers cannot tell
 - [strict-origin-when-cross-origin, explained](/blog/strict-origin-when-cross-origin)
 - [Reading HTTP_REFERER in PHP and nginx](/blog/http-referer-php-nginx)
 - [How to hide the referrer URL when linking out](/blog/hide-referrer-url)
+- [Referer or referrer: which spelling goes where](/blog/referer-vs-referrer)
 - [All posts](/blog/)
