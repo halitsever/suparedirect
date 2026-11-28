@@ -14,7 +14,7 @@ What the strict-origin-when-cross-origin referrer policy sends for each kind of 
 
 ## [rel="noopener noreferrer": what each part does](/blog/noopener-noreferrer)
 
-What rel="noopener" and rel="noreferrer" each do, why target="_blank" already implies noopener, and when noreferrer is worth adding to a link.
+What rel=noopener and rel=noreferrer each do on a link, why target=_blank already implies noopener, and when noreferrer is worth adding to your links.
 
 ## [Referrer-Policy header: best practices and every value](/blog/referrer-policy-best-practices)
 

@@ -1,7 +1,7 @@
 ---
 title: "rel=\"noopener noreferrer\": What It Does"
 titleTemplate: false
-description: "What rel=\"noopener\" and rel=\"noreferrer\" each do, why target=\"_blank\" already implies noopener, and when noreferrer is worth adding to a link."
+description: "What rel=noopener and rel=noreferrer each do on a link, why target=_blank already implies noopener, and when noreferrer is worth adding to your links."
 headline: "rel=\"noopener noreferrer\": what each part does"
 date: "2026-11-28"
 keyword: "noopener noreferrer"
