@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Referrer test | Suparedirect</title>
+  <meta name="description" content="Prints the referrer this page received, to check whether a link or a Suparedirect redirect sent one.">
+  <link rel="icon" href="/suparedirect/favicon.svg" type="image/svg+xml">
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "dd7e54d3f48841c187d72d9dbb92a6b6"}'></script>
+  <style>
+    :root { color-scheme: dark; --bg: #07070b; --bg2: #0d0d14; --line: rgba(255,255,255,.1); --ink: #e8e8ee; --ink2: rgba(232,232,238,.7); --violet: #a3a1fb; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 ui-sans-serif, system-ui, -apple-system, sans-serif; }
+    main { max-width: 640px; margin: 0 auto; padding: 48px 16px; }
+    h1 { font-size: 28px; line-height: 1.2; margin: 0 0 16px; }
+    .box { padding: 16px; border: 1px solid var(--line); border-radius: 12px; background: var(--bg2); }
+    .label { margin: 0 0 6px; font-size: 13px; font-weight: 600; color: var(--ink2); }
+    #ref { margin: 0; font: 15px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; overflow-wrap: anywhere; }
+    p { color: var(--ink2); }
+    a { color: var(--violet); }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Referrer test</h1>
+    <div class="box">
+      <p class="label">document.referrer on this page</p>
+      <p id="ref">Needs JavaScript to read the referrer.</p>
+    </div>
+    <p id="verdict"></p>
+    <p>This page only reads <code>document.referrer</code> in your browser. It sends nothing anywhere apart from the page view counted by Cloudflare Web Analytics.</p>
+    <p><a href="/suparedirect/link-generator/">Back to the link generator</a> · <a href="/suparedirect/">Suparedirect</a></p>
+  </main>
+  <script>
+    var r = document.referrer;
+    document.getElementById('ref').textContent = r || '(empty)';
+    document.getElementById('verdict').textContent = r
+      ? 'A referrer was sent: the page you came from is visible to this site.'
+      : 'No referrer was sent. This site cannot see which page you came from.';
+  </script>
+</body>
+</html>

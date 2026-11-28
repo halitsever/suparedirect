@@ -1,0 +1,37 @@
+# Suparedirect
+
+> Suparedirect is a self-hosted dereferer (Node.js, Express, Docker). A link to https://your-host/?to=<url> loads a page sent with Referrer-Policy: no-referrer that forwards the visitor by script, so the destination gets no Referer header.
+
+Run it with `docker run -p 3000:3000 halitsever/suparedirect:latest`. Redirect stats are kept in memory (last 500) and served without auth on /api/stats.
+
+## Docs
+
+- [Home](https://projects.halit.org/suparedirect/): what it does and when you need it
+- [Getting started](https://projects.halit.org/suparedirect/guide/getting-started): Docker and from source
+- [How it works](https://projects.halit.org/suparedirect/guide/how-it-works): the redirect page and its limits
+- [Stats dashboard](https://projects.halit.org/suparedirect/guide/dashboard): what the numbers mean
+- [Self-hosting notes](https://projects.halit.org/suparedirect/guide/self-hosting): port, stats endpoint, TLS
+- [The Referer header](https://projects.halit.org/suparedirect/guide/referer-header): what browsers send and how to hide it
+- [Do you need a dereferer?](https://projects.halit.org/suparedirect/guide/noreferrer-referrer-policy): link attribute, header or dereferer
+- [Dereferer services compared](https://projects.halit.org/suparedirect/guide/dereferer-alternatives): hosted vs self-hosted
+
+## Tools
+
+- [Anonymous link generator](https://projects.halit.org/suparedirect/link-generator/): builds ?to= links for your instance and tests the referrer they send
+
+## Blog
+
+- [All posts](https://projects.halit.org/suparedirect/blog/)
+- [strict-origin-when-cross-origin, explained](https://projects.halit.org/suparedirect/blog/strict-origin-when-cross-origin): What the strict-origin-when-cross-origin referrer policy sends for each kind of request, why DevTools shows it next to failed requests, and how to change it.
+- [rel="noopener noreferrer": what each part does](https://projects.halit.org/suparedirect/blog/noopener-noreferrer): What rel="noopener" and rel="noreferrer" each do, why target="_blank" already implies noopener, and when noreferrer is worth adding to a link.
+- [Referrer-Policy header: best practices and every value](https://projects.halit.org/suparedirect/blog/referrer-policy-best-practices): Every Referrer-Policy value in one table, a recommended default, fallback syntax, and how to set the header in nginx, Apache, IIS web.config and Express.
+- [Reading HTTP_REFERER in PHP and nginx](https://projects.halit.org/suparedirect/blog/http-referer-php-nginx): How to read the Referer header as $_SERVER['HTTP_REFERER'] in PHP and $http_referer in nginx, why it is often empty, and why it cannot be trusted.
+- [How URL redirects work: 301, 302, meta refresh and JavaScript](https://projects.halit.org/suparedirect/blog/how-url-redirects-work): The four ways to redirect a URL, what each status code means, how Google reads them, and which Referer the destination gets, tested in headless Chrome.
+- [Redirect services with the target URL in the path](https://projects.halit.org/suparedirect/blog/redirect-service-url-in-path): Path-style redirect URLs put the target after a slash instead of in ?to=. How they differ, where they break, and how to add a path route to Suparedirect.
+- [The Referer in an HTTP request: how to read and test it](https://projects.halit.org/suparedirect/blog/referer-in-http-request): Where the Referer header sits in an HTTP request, how to see it in DevTools, send or fake it with curl, read it in JavaScript and check what a link sends.
+- [How to hide the referrer URL when linking out](https://projects.halit.org/suparedirect/blog/hide-referrer-url): Four ways to hide the referrer URL from the sites you link to: rel=noreferrer, a Referrer-Policy header, a meta tag, or a self-hosted dereferer link.
+
+## Optional
+
+- [Source](https://github.com/halitsever/suparedirect): repository
+- [Docker Hub](https://hub.docker.com/r/halitsever/suparedirect): image

@@ -91,4 +91,4 @@ It does not store IP addresses, and it writes no log file of its own.
 - The service redirects to any URL it is given. There is no allowlist.
 - An extra request happens before the target loads, so each click depends on your server being up.
 
-If you control the page that holds the link, you can get the same result without the extra hop. See [noreferrer and Referrer-Policy](./noreferrer-referrer-policy).
+If you control the page that holds the link, you can get the same result without the extra hop. See [do you need a dereferer?](./noreferrer-referrer-policy)
